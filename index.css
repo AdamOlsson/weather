@@ -1,0 +1,57 @@
+#main_body {
+    width:100%;
+}
+
+#current_weather {
+    float:left;
+    width:50%;
+}
+
+#weather_table {
+    float:right;
+    width: 50%;
+}
+
+.grid-container {
+    display: grid;
+}
+
+div.grid-item {
+    width: 110px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid-item1 {
+    /* background-color: red; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}   
+
+#grid-item2 {
+    /* background-color: green; */
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#grid-item3 {
+    /* background-color: blue; */
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#grid-item4 {
+    /* background-color: purple; */
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}

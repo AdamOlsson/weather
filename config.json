@@ -1,0 +1,6 @@
+{
+    "lon": 11.9835,
+    "lat": 57.6817,
+    "smhi_url": "https://opendata-download-metfcst.smhi.se",
+    "smhi_endpoint": "/api/category/pmp3g/version/2/geotype/point/lon/{}/lat/{}/data.json"
+}

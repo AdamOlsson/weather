@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML in 10 Simple Steps or Less</title>
+        <meta charset="UTF-8"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body id="main_body">
+        <div id="current_weather"></div>
+        <div id="weather_table" class="grid-container"></div>
+    </body>
+</html>
+
+<script>    
+    fetch('http://0.0.0.0:3000/')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            var grid_html_str = "";
+            var current_weather_html_str = ""
+            var grid_item_class = 'class="grid-item"'
+            var count = 0;
+            data.timeSeries.forEach((timeStep, index, array) => {
+                if (index == 0) {
+                    // Should be placed in left field
+                    current_weather_html_str = 
+                        '<div class="big-display">' +
+                            '<img src="img/Clearday.png">' +
+                            "<p>" + 
+                                timeStep.time + "<br>" +
+                                timeStep.parameters.find(param => param.name == "t").values[0] + "C<br>" +
+                                timeStep.parameters.find(param => param.name == "gust").values[0] + "m/s<br>" +
+                                timeStep.weather + "<br>" +
+                            "</p>" +
+                        '</div>'
+                } else if (index%2 == 0) {
+                    // Should be placed in right grid
+                    var grid_item_id = 'id="grid-item' + count + '"';
+                    grid_html_str +=  
+                        "<div " + grid_item_class + " " + grid_item_id + ">" +
+                            '<img src="img/Clearday.png">' + 
+                            "<p>" + 
+                                timeStep.time + "<br>" +
+                                timeStep.parameters.find(param => param.name == "t").values[0] + "C<br>" +
+                                timeStep.parameters.find(param => param.name == "gust").values[0] + "m/s<br>" +
+                                timeStep.weather + "<br>" +
+                            "</p>" +
+                        "</div>"
+                    count++;
+                }
+            });
+            document.getElementById("weather_table").innerHTML   += grid_html_str;
+            document.getElementById("current_weather").innerHTML += current_weather_html_str;
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
+</script>
