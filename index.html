@@ -79,7 +79,7 @@
         //var returnStr = "";
         var precipitation_str = "";
         if ([8,9,10,12,13,14,15,16,17,18,19,20,22,23,24,25,26,27].includes(timeStep.weather_code)) {
-            precipitation_str = timeStep.parameters.find(param => param.name == "pmean").values[0]  + "mm/h<br>";
+            precipitation_str = timeStep.parameters.find(param => param.name == "pmean").values[0]  + " mm/h<br>";
         }
 
         var prob_thunder_str = "";
@@ -89,7 +89,7 @@
 
         var returnStr = weather_title[timeStep.weather_code] + "<br>" +  
                         timeStep.parameters.find(param => param.name == "t").values[0]  + "&#8451<br>" +
-                        timeStep.parameters.find(param => param.name == "ws").values[0] + "m/s<br>" +
+                        timeStep.parameters.find(param => param.name == "ws").values[0] + " m/s<br>" +
                         precipitation_str +
                         prob_thunder_str;
         return returnStr;
