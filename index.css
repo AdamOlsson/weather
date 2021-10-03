@@ -4,6 +4,10 @@
     overflow-x: hidden;
 }
 
+p, h1, h2 {
+    font-family: Verdana, sans-serif;
+}
+
 #current_weather {
     float:left;
     width:30%;
@@ -36,7 +40,7 @@ div.grid-item {
 
 .big-display-header {
     margin: 0px;
-    font-size: 48px;
+    font-size: 56px;
     display: flex;
     justify-content: center;
 }
@@ -51,6 +55,7 @@ div.grid-item {
     margin-right: 2px;
     margin-bottom: 0px;
     margin-left: 2px;
+    font-size: 36px;
 }
 
 .grid-item-header {
@@ -61,7 +66,7 @@ div.grid-item {
 
 .grid-item-text {
     margin-top: 0px;
-    margin-right: 2px;
+    margin-right: 5px;
     margin-bottom: 0px;
     margin-left: 5px;
 }
