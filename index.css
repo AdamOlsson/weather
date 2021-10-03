@@ -19,9 +19,14 @@
 div.grid-item {
     width: 110px;
     height: 220px;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
+}
+
+.grid-item-header {
+    display: flex;
+    justify-content: center;
 }
 
 #grid-item1 {
