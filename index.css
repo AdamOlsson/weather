@@ -1,5 +1,7 @@
 #main_body {
     width:99%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 #current_weather {
