@@ -8,6 +8,10 @@ p, h1, h2 {
     font-family: Verdana, sans-serif;
 }
 
+p.grid-item-text {
+    line-height:22px;
+}
+
 #current_weather {
     float:left;
     width:30%;
