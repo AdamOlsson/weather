@@ -19,9 +19,8 @@
 }
 
 div.grid-item {
-    width: 130px;
-    height: auto;
-    /* display: flex; */
+    width: 120px;
+    height: 230px;
     justify-content: center;
     align-items: center;
 }

@@ -51,7 +51,7 @@
             precipitation_str = timeStep.parameters.find(param => param.name == "pmean").values[0]  + "mm/h<br>";
         }
 
-        var prob_thunder_str = "";
+        var prob_thunder_str = "test";
         if ([11,21].includes(timeStep.weather_code)) {
             precipitation_str = timeStep.parameters.find(param => param.name == "tstm").values[0]  + "%<br>";
         }
