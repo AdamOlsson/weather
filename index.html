@@ -86,6 +86,10 @@
             precipitation_str = timeStep.parameters.find(param => param.name == "tstm").values[0]  + "%<br>";
         }
 
+        if (prob_thunder_str == "" && precipitation_str == "") {
+            prob_thunder_str = "<br>" // simply for pretty formatting
+        }
+
         var returnStr = weather_title[timeStep.weather_code] + "<br>" +  
                         timeStep.parameters.find(param => param.name == "t").values[0]  + "&#8451<br>" +
                         timeStep.parameters.find(param => param.name == "ws").values[0] + " m/s<br>" +
