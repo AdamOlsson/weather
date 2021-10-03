@@ -12,7 +12,58 @@
     </body>
 </html>
 
-<script>    
+<script>
+    const weather_symbol_path = [
+        "", // index 0 not used
+        "Clearday.png",     // 1
+        "Clearday.png",     // 2
+        "Halfclearday.png", // 3
+        "Cloudy.png",       // 4
+        "Cloudy.png",       // 5
+        "Cloudy.png",       // 6
+        "Fog.png",          // 7
+        "Rain.png",         // 8
+        "Rain.png",         // 9
+        "Rain.png",         // 10
+        "Lightning.png",    // 11
+        "Sleet.png",        // 12
+        "Sleet.png",        // 13
+        "Sleet.png",        // 14
+        "Snow.png",         // 15
+        "Snow.png",         // 16
+        "Snow.png",         // 17
+        "Rain.png",         // 18
+        "Rain.png",         // 19
+        "Rain.png",         // 20
+        "Lightning.png",    // 21
+        "Slet.png",         // 22
+        "Slet.png",         // 23
+        "Slet.png",         // 24
+        "Snow.png",         // 25
+        "Snow.png",         // 26
+        "Snow.png",         // 27
+    ];
+
+    function showAppropriateData(timeStep) {
+        //var returnStr = "";
+        var precipitation_str = "";
+        if ([8,9,10,12,13,14,15,16,17,18,19,20,22,23,24,25,26,27].includes(timeStep.weather_code)) {
+            precipitation_str = timeStep.parameters.find(param => param.name == "pmean").values[0]  + "mm/h<br>";
+        }
+
+        var prob_thunder_str = "";
+        if ([11,21].includes(timeStep.weather_code)) {
+            precipitation_str = timeStep.parameters.find(param => param.name == "tstm").values[0]  + "%<br>";
+        }
+
+        var returnStr = timeStep.weather + "<br>" +  
+                        timeStep.parameters.find(param => param.name == "t").values[0]  + "&#8451<br>" +
+                        timeStep.parameters.find(param => param.name == "ws").values[0] + "m/s<br>" +
+                        precipitation_str + "<br>" +
+                        prob_thunder_str + "<br>";
+        return returnStr;
+    }
+
     fetch('http://0.0.0.0:3000/')
         .then(function (response) {
             return response.json();
@@ -27,12 +78,10 @@
                     // Should be placed in left field
                     current_weather_html_str = 
                         '<div class="big-display">' +
-                            '<h2 class="big-display-header">' + timeStep.time + '</h2>' +
-                            '<img class="big-display-image" src="img/Clearday.png">' +
+                            '<h1 class="big-display-header">' + timeStep.time + '</h1>' +
+                            '<img class="big-display-image" src="img/' + weather_symbol_path[timeStep.weather_code] + '">' +
                             '<p class="big-display-text">' + 
-                                timeStep.parameters.find(param => param.name == "t").values[0] + "C<br>" +
-                                timeStep.parameters.find(param => param.name == "gust").values[0] + "m/s<br>" +
-                                timeStep.weather + "<br>" +
+                                showAppropriateData(timeStep) +
                             "</p>" +
                         '</div>'
                 } else if (index%2 == 0) {
@@ -41,11 +90,9 @@
                     grid_html_str +=  
                         "<div " + grid_item_class + " " + grid_item_id + ">" +
                             '<h2 class="grid-item-header">' + timeStep.time + '</h2>' +
-                            '<img src="img/Clearday.png">' + 
+                            '<img class="grid-item-image" src="img/' + weather_symbol_path[timeStep.weather_code] + '">' +
                             '<p class="grid-item-text">' + 
-                                timeStep.parameters.find(param => param.name == "t").values[0] + "C<br>" +
-                                timeStep.parameters.find(param => param.name == "gust").values[0] + "m/s<br>" +
-                                timeStep.weather + "<br>" +
+                                showAppropriateData(timeStep) +
                             "</p>" +
                         "</div>"
                     count++;
