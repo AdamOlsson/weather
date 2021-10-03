@@ -4,12 +4,12 @@
 
 #current_weather {
     float:left;
-    width:50%;
+    width:30%;
 }
 
 #weather_table {
     float:right;
-    width: 50%;
+    width: 70%;
 }
 
 .grid-container {
@@ -24,9 +24,19 @@ div.grid-item {
     align-items: center;
 }
 
+.big-display-header {
+    /* margin: 0px;
+    display: flex;
+    justify-content: center; */
+}
 .grid-item-header {
+    margin: 0px;
     display: flex;
     justify-content: center;
+}
+
+.grid-item-text {
+    margin: 0px;
 }
 
 #grid-item1 {

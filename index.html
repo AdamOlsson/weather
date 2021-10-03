@@ -27,9 +27,9 @@
                     // Should be placed in left field
                     current_weather_html_str = 
                         '<div class="big-display">' +
-                            '<h2>' + timeStep.time + '</h2>' +
+                            '<h2 class="big-display-header">' + timeStep.time + '</h2>' +
                             '<img src="img/Clearday.png">' +
-                            "<p>" + 
+                            '<p>' + 
                                 timeStep.parameters.find(param => param.name == "t").values[0] + "C<br>" +
                                 timeStep.parameters.find(param => param.name == "gust").values[0] + "m/s<br>" +
                                 timeStep.weather + "<br>" +
@@ -42,7 +42,7 @@
                         "<div " + grid_item_class + " " + grid_item_id + ">" +
                             '<h2 class="grid-item-header">' + timeStep.time + '</h2>' +
                             '<img src="img/Clearday.png">' + 
-                            "<p>" + 
+                            '<p class="grid-item-text">' + 
                                 timeStep.parameters.find(param => param.name == "t").values[0] + "C<br>" +
                                 timeStep.parameters.find(param => param.name == "gust").values[0] + "m/s<br>" +
                                 timeStep.weather + "<br>" +
