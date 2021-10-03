@@ -24,11 +24,30 @@ div.grid-item {
     align-items: center;
 }
 
-.big-display-header {
-    /* margin: 0px;
+#current_weather {
     display: flex;
-    justify-content: center; */
+    justify-content: center;
 }
+
+.big-display {
+    flex-direction: column;
+}
+
+.big-display-header {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.big-display-image {
+    width: 250px;
+    height: auto;
+}
+
+.big-display-text {
+    margin: 0px;
+}
+
 .grid-item-header {
     margin: 0px;
     display: flex;

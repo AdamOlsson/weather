@@ -28,8 +28,8 @@
                     current_weather_html_str = 
                         '<div class="big-display">' +
                             '<h2 class="big-display-header">' + timeStep.time + '</h2>' +
-                            '<img src="img/Clearday.png">' +
-                            '<p>' + 
+                            '<img class="big-display-image" src="img/Clearday.png">' +
+                            '<p class="big-display-text">' + 
                                 timeStep.parameters.find(param => param.name == "t").values[0] + "C<br>" +
                                 timeStep.parameters.find(param => param.name == "gust").values[0] + "m/s<br>" +
                                 timeStep.weather + "<br>" +
