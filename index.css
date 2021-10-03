@@ -2,14 +2,17 @@
     width:99%;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-color: #262d43;
 }
 
 p, h1, h2 {
     font-family: Verdana, sans-serif;
+    color: white;
 }
 
 p.grid-item-text {
-    line-height:22px;
+    line-height:17px;
+    font-weight: 500;
 }
 
 #current_weather {

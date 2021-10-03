@@ -46,37 +46,36 @@
 
     const weather_title = [
         "", // index 0 not used
-        "Klart",     // 1
-        "Lätt Molnighet",     // 2
-        "Växlande Mol", // 3
-        "Halvklart",       // 4
-        "Molnigt",       // 5
-        "Mulet",       // 6
+        "Klart",            // 1
+        "Lätt Molnighet",   // 2
+        "Växlande Mol",     // 3
+        "Halvklart",        // 4
+        "Molnigt",          // 5
+        "Mulet",            // 6
         "Dimmigt",          // 7
-        "Växlande Regn",         // 8
-        "Växlande Regn",         // 9
-        "Växlande Regn",         // 10
-        "Åskoväder",    // 11
-        "Snöblandat Regn",        // 12
-        "Snöblandat Regn",        // 13
-        "Snöblandat Regn",        // 14
-        "Växlande Snö",         // 15
-        "Växlande Snö",         // 16
-        "Växlande Snö",         // 17
-        "Regn",         // 18
-        "Regn",         // 19
-        "Regn",         // 20
-        "Åska",    // 21
-        "Snöblandat Regn",         // 22
-        "Snöblandat Regn",         // 23
-        "Snöblandat Regn",         // 24
-        "Snö",         // 25
-        "Snö",         // 26
-        "Snö",         // 27
+        "Växlande Regn",    // 8
+        "Växlande Regn",    // 9
+        "Växlande Regn",    // 10
+        "Åskoväder",        // 11
+        "Snöblandat Regn",  // 12
+        "Snöblandat Regn",  // 13
+        "Snöblandat Regn",  // 14
+        "Växlande Snö",     // 15
+        "Växlande Snö",     // 16
+        "Växlande Snö",     // 17
+        "Regn",             // 18
+        "Regn",             // 19
+        "Regn",             // 20
+        "Åska",             // 21
+        "Snöblandat Regn",  // 22
+        "Snöblandat Regn",  // 23
+        "Snöblandat Regn",  // 24
+        "Snö",              // 25
+        "Snö",              // 26
+        "Snö",              // 27
     ];
 
     function showAppropriateData(timeStep) {
-        //var returnStr = "";
         var precipitation_str = "";
         if ([8,9,10,12,13,14,15,16,17,18,19,20,22,23,24,25,26,27].includes(timeStep.weather_code)) {
             precipitation_str = timeStep.parameters.find(param => param.name == "pmean").values[0]  + " mm/h<br>";
