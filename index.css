@@ -58,11 +58,14 @@ div.grid-item {
 }
 
 .big-display-text {
-    margin-top: 0px;
+    margin-top: -4px;
     margin-right: 2px;
-    margin-bottom: 0px;
-    margin-left: 2px;
-    font-size: 36px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    padding-top: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 34px;
     background-color: #2d3449;
 }
 
@@ -73,12 +76,13 @@ div.grid-item {
 }
 
 .grid-item-text {
-    margin-top: 0px;
+    margin-top: -4px;
     margin-right: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 2px;
     margin-left: 0px;
     padding-right: 5px;
     padding-left: 5px;
+    padding-top: 4px;
     background-color: #2d3449;
 }
 
