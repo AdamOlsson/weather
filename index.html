@@ -59,8 +59,8 @@
         var returnStr = timeStep.weather + "<br>" +  
                         timeStep.parameters.find(param => param.name == "t").values[0]  + "&#8451<br>" +
                         timeStep.parameters.find(param => param.name == "ws").values[0] + "m/s<br>" +
-                        precipitation_str + "<br>" +
-                        prob_thunder_str + "<br>";
+                        precipitation_str +
+                        prob_thunder_str;
         return returnStr;
     }
 
