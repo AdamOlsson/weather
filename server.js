@@ -1,6 +1,8 @@
 const http = require('http');
 const fs = require('fs');
 
+const data_file = "/home/pi/projects/weather/config.json"
+
 const HTTP_GET = "GET"
  
 const hostname = '0.0.0.0';

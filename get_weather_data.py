@@ -1,9 +1,10 @@
 import requests, json, calendar, datetime
+from os.path import join
 
-config_path = "config.json"
+config_file = "/home/pi/projects/weather/config.json"
 weather_transation_path = "wsymb2.json"
 
-with open(config_path, 'r') as f:
+with open(config_file, 'r') as f:
     config = json.load(f)
 
 with open(weather_transation_path, 'r') as f:
@@ -36,5 +37,6 @@ for timestamp in response_json["timeSeries"]:
             timestamp["weather_code"] = weather_code
             break
 
+data_file = config["data_file"]
 with open("data.json", 'w') as f:
     json.dump(response_json, f)
