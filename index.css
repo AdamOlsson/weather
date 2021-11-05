@@ -48,6 +48,8 @@ div.grid-item {
 #date_display {
     display: flex;
     float: left;
+    margin-left: 4px;
+    margin-bottom: 4px;
 }
 
 .big-display {
