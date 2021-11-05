@@ -143,10 +143,13 @@
                             "</p>" +
                         '</div>'
                     
-                    var date = timeStep.date.split("-")
-                    var day_num = parseInt(date[2]);
-                    var month_num = parseInt(date[1]);
                     var today = new Date();
+                    var min_str = "";
+                    if (today.getMinutes() < 10) {
+                        min_str = "0" + today.getMinutes();
+                    } else {
+                        min_str = today.getMinutes();
+                    }
                     curent_date_str = "<h2>" + today.getDate() + " " +  month_name[today.getMonth()] + " " + today.getHours()+ ":" + today.getMinutes() + "</h2>";
                 } else if (index%2 == 0) {
                     // Should be placed in right grid
