@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 
-const data_file = "/home/pi/projects/weather/config.json"
+const data_file = "/home/pi/projects/weather/data.json"
 
 const HTTP_GET = "GET"
  
