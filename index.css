@@ -46,8 +46,8 @@ div.grid-item {
 }
 
 #date_display {
-    margin-left: 4px;
-    margin-bottom: 4px;
+    display: flex;
+    float: left;
 }
 
 .big-display {
