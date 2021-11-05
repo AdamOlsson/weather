@@ -37,6 +37,6 @@ for timestamp in response_json["timeSeries"]:
             timestamp["weather_code"] = weather_code
             break
 
-data_file = config["data_file"]
-with open("data.json", 'w') as f:
+data_file_path = config["data_file"]
+with open(data_file_path, 'w') as f:
     json.dump(response_json, f)
