@@ -150,7 +150,8 @@
                     } else {
                         min_str = today.getMinutes();
                     }
-                    curent_date_str = "<h2>" + today.getDate() + " " +  month_name[today.getMonth()] + " " + today.getHours()+ ":" + today.getMinutes() + "</h2>";
+                    
+                    curent_date_str = "<h2>" + today.getDate() + " " +  month_name[today.getMonth()] + " " + today.getHours()+ ":" + min_str + "</h2>";
                 } else if (index%2 == 0) {
                     // Should be placed in right grid
                     var grid_item_id = 'id="grid-item' + count + '"';
