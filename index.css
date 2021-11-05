@@ -45,6 +45,11 @@ div.grid-item {
     justify-content: center;
 }
 
+#date_display {
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+
 .big-display {
     flex-direction: column;
 }
