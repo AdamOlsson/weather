@@ -28,7 +28,7 @@ server.listen(port, hostname, () => {
 
 
 function handleGet(req, res) {
-    let rawdata = fs.readFileSync('data.json');
+    let rawdata = fs.readFileSync(data_file);
     let weatherdata = JSON.parse(rawdata);
 
     res.statusCode = 200;
