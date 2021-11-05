@@ -49,7 +49,7 @@ div.grid-item {
     display: flex;
     float: left;
     margin-left: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .big-display {
