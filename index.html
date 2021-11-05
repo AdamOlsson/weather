@@ -14,10 +14,11 @@
 </html>
 
 <script>
+    // Change the image here to decide which symbol to show for corresponding index.
     const weather_symbol_path = [
         "", // index 0 not used
         "Clearday.png",     // 1
-        "Clearday.png",     // 2
+        "Halfclearday.png", // 2
         "Halfclearday.png", // 3
         "Cloudy.png",       // 4
         "Cloudy.png",       // 5
@@ -43,7 +44,12 @@
         "Snow.png",         // 25
         "Snow.png",         // 26
         "Snow.png",         // 27
+        "Clearnight.png",     // 1 + 27 (nightmode offset)
+        "Halfclearnight.png", // 2 + 27 (nightmode offset)
+        "Halfclearnight.png", // 3 + 27 (nightmode offset)
     ];
+
+    const nightmode_offset = 27;
 
     const weather_title = [
         "", // index 0 not used
@@ -99,6 +105,22 @@
         return returnStr;
     }
 
+    function getWeatherSymbolPath(weather_code, time) {  	
+        var index = weather_code;
+
+        var hour = parseInt(time.split(":")[0]);
+        var nightmode = hour < 8 || 20 < hour; // nightmode between 20:00 to 08:00
+        var weather_symbols_that_got_nightmode = [1,2,3]
+        if (nightmode && weather_symbols_that_got_nightmode.includes(weather_code)) {
+            index += nightmode_offset;
+        }
+
+        console.log("Weather code:", weather_code, "Index:", index, "Hour:", hour, "Nightmode:", nightmode, weather_symbol_path[index]);
+        
+
+        return weather_symbol_path[index];
+    }
+
     fetch('http://0.0.0.0:3000/')
         .then(function (response) {
             return response.json();
@@ -114,7 +136,7 @@
                     current_weather_html_str = 
                         '<div class="big-display">' +
                             '<h1 class="big-display-header">' + timeStep.time + '</h1>' +
-                            '<img class="big-display-image" src="img/' + weather_symbol_path[timeStep.weather_code] + '">' +
+                            '<img class="big-display-image" src="img/' + getWeatherSymbolPath(timeStep.weather_code, timeStep.time) + '">' +
                             '<p class="big-display-text">' + 
                                 showAppropriateData(timeStep) +
                             "</p>" +
@@ -125,7 +147,7 @@
                     grid_html_str +=  
                         "<div " + grid_item_class + " " + grid_item_id + ">" +
                             '<h2 class="grid-item-header">' + timeStep.time + '</h2>' +
-                            '<img class="grid-item-image" src="img/' + weather_symbol_path[timeStep.weather_code] + '">' +
+                            '<img class="grid-item-image" src="img/' + getWeatherSymbolPath(timeStep.weather_code, timeStep.time) + '">' +
                             '<p class="grid-item-text">' + 
                                 showAppropriateData(timeStep) +
                             "</p>" +
