@@ -3,7 +3,7 @@
     <head>
         <title>Weather</title>
         <meta charset="UTF-8"/>
-        <meta http-equiv="refresh" content="900">
+        <meta http-equiv="refresh" content="60">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
         <link rel="stylesheet" href="index.css">
     </head>
@@ -83,7 +83,7 @@
         "Snö",              // 27
     ];
 
-    const month_name = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Okt","Nov","Dec"];
+    const month_name = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Okt","Nov","Dec"];
 
     function showAppropriateData(timeStep) {
         var precipitation_str = "";
@@ -146,7 +146,8 @@
                     var date = timeStep.date.split("-")
                     var day_num = parseInt(date[2]);
                     var month_num = parseInt(date[1]);
-                    curent_date_str = "<h2>" + day_num + " " +  month_name[month_num] + "</h2>";
+                    var today = new Date();
+                    curent_date_str = "<h2>" + today.getDate() + " " +  month_name[today.getMonth()] + " " + today.getHours()+ ":" + today.getMinutes() + "</h2>";
                 } else if (index%2 == 0) {
                     // Should be placed in right grid
                     var grid_item_id = 'id="grid-item' + count + '"';
