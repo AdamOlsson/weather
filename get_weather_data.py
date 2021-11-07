@@ -2,12 +2,12 @@ import requests, json, calendar, datetime
 from os.path import join
 
 config_file = "/home/pi/projects/weather/config.json"
-weather_transation_path = "wsymb2.json"
+weather_translation_path = "/home/pi/projects/weather/wsymb2.json"
 
 with open(config_file, 'r') as f:
     config = json.load(f)
 
-with open(weather_transation_path, 'r') as f:
+with open(weather_translation_path, 'r') as f:
     weather_transation = json.load(f)
 
 smhi_url = config["smhi_url"]
