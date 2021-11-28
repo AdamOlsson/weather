@@ -121,7 +121,7 @@
         return weather_symbol_path[index];
     }
 
-    fetch('http://0.0.0.0:3000/')
+    fetch('http://0.0.0.0:3000/weatherData')
         .then(function (response) {
             return response.json();
         })
